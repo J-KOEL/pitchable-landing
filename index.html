@@ -190,18 +190,19 @@
             
             <div class="beta-form">
                 <h3>Join the Beta Waitlist</h3>
-                <form id="betaForm">
+                <form id="betaForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdUeguxEKK4m21Gm44Tu-o6dutRN9oiKaj8x67dvdnyfTIEyQ/formResponse" method="POST" target="hidden_iframe">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="entry.1203544544" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
+                        <input type="email" name="entry.2112578059" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="What type of freelancer are you?" required>
+                        <input type="text" name="entry.445956151" placeholder="What type of freelancer are you?" required>
                     </div>
                     <button type="submit" class="btn">Get Early Access</button>
                 </form>
+                <iframe name="hidden_iframe" style="display:none;"></iframe>
             </div>
         </div>
     </section>
@@ -254,28 +255,15 @@
 
     <script>
         document.getElementById('betaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(e.target);
-            const name = formData.get('name') || e.target.children[0].children[0].value;
-            const email = formData.get('email') || e.target.children[1].children[0].value;
-            const type = formData.get('type') || e.target.children[2].children[0].value;
-            
-            // Simple validation
-            if (!email || !email.includes('@')) {
-                alert('Please enter a valid email address');
-                return;
-            }
-            
-            // Replace this with your actual form handling
-            console.log('Beta signup:', { name, email, type });
-            
-            // Show success message
+            // Show success message immediately
             document.querySelector('.btn').textContent = 'Thanks! We\'ll be in touch soon.';
             document.querySelector('.btn').style.background = '#28a745';
             
-            // You'll want to connect this to ConvertKit, Mailchimp, or a simple Google Form
+            // Optional: Hide form after 3 seconds
+            setTimeout(function() {
+                document.querySelector('.beta-form h3').textContent = 'Thanks for joining the waitlist!';
+                document.querySelector('.beta-form form').style.display = 'none';
+            }, 2000);
         });
     </script>
 </body>
