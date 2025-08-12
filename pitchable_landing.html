@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitchable - Generate Proposals in 2 Minutes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subhead {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .beta-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            max-width: 400px;
+        }
+        
+        .beta-form h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        input[type="email"], input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="email"]:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn {
+            width: 100%;
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .pain-points {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .pain-points h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .problems {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .problem {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .solution {
+            background: #667eea;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .solution h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .solution-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            background: rgba(255,255,255,0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subhead {
+                font-size: 1.1rem;
+            }
+            
+            .beta-form {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Generate Professional Proposals in Under 2 Minutes</h1>
+            <p class="subhead">Stop spending hours on proposals. Pitchable turns client info into polished, branded proposals instantly.</p>
+            
+            <div class="beta-form">
+                <h3>Join the Beta Waitlist</h3>
+                <form id="betaForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="What type of freelancer are you?" required>
+                    </div>
+                    <button type="submit" class="btn">Get Early Access</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="pain-points">
+        <h2>The Proposal Problem</h2>
+        <div class="problems">
+            <div class="problem">
+                <div class="problem-icon">⏰</div>
+                <h3>Hours Wasted</h3>
+                <p>Freelancers spend 2-4 hours per proposal, cutting into billable time and revenue.</p>
+            </div>
+            <div class="problem">
+                <div class="problem-icon">📄</div>
+                <h3>Generic Templates</h3>
+                <p>Copy-paste proposals that don't speak to your client's specific needs or industry.</p>
+            </div>
+            <div class="problem">
+                <div class="problem-icon">🏃‍♂️</div>
+                <h3>Lost to Speed</h3>
+                <p>Faster competitors win deals while you're still formatting your proposal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="container">
+            <h2>The Pitchable Solution</h2>
+            <p class="subhead">AI-powered proposal generation that learns your industry and client needs.</p>
+            
+            <div class="solution-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Add Client Info</h4>
+                    <p>Quick form or CRM import</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>AI Generates</h4>
+                    <p>Smart content for your industry</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Customize & Send</h4>
+                    <p>Branded PDF in under 2 minutes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('betaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(e.target);
+            const name = formData.get('name') || e.target.children[0].children[0].value;
+            const email = formData.get('email') || e.target.children[1].children[0].value;
+            const type = formData.get('type') || e.target.children[2].children[0].value;
+            
+            // Simple validation
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Replace this with your actual form handling
+            console.log('Beta signup:', { name, email, type });
+            
+            // Show success message
+            document.querySelector('.btn').textContent = 'Thanks! We\'ll be in touch soon.';
+            document.querySelector('.btn').style.background = '#28a745';
+            
+            // You'll want to connect this to ConvertKit, Mailchimp, or a simple Google Form
+        });
+    </script>
+</body>
+</html>
